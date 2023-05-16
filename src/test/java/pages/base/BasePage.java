@@ -31,5 +31,4 @@ public abstract class BasePage {
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(tab));
     }
-
 }

@@ -2,7 +2,7 @@ package service;
 
 import model.CalculatorFormData;
 
-public class CalculatorFormDataCreator {
+public final class CalculatorFormDataCreator {
     public static final String TESTDATA_NUMBER_OF_INSTANCES = "testdata.numberOfInstances";
     public static final String TESTDATA_OPERATING_SYSTEM = "testdata.operatingSystem";
     public static final String TESTDATA_MODEL = "testdata.model";

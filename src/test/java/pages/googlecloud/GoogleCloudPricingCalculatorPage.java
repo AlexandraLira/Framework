@@ -11,12 +11,15 @@ import pages.base.BasePage;
 
 import java.time.Duration;
 
-import static java.lang.String.format;
-
 public class GoogleCloudPricingCalculatorPage extends BasePage {
 
-    private static final By MAIN_FRAME = By.xpath("//*[@id='cloud-site']//iframe");
-    private static final By INNER_FRAME = By.id("myFrame");
+    private static final String DROPDOWN_OPTION_XPATH_PATTERN = "//*[contains(@class, 'md-clickable')]//md-option/div[contains(text(), '%s')]";
+
+    @FindBy(xpath = "//*[@id='cloud-site']//iframe")
+    private WebElement mainFrame;
+
+    @FindBy(id = "myFrame")
+    private WebElement innerFrame;
 
     @FindBy(xpath = "//div[@title='Compute Engine' and @class='tab-holder compute']")
     private WebElement computeEngineIcon;
@@ -68,8 +71,8 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
     }
 
     public GoogleCloudPricingCalculatorPage switchFrames() {
-        driver.switchTo().frame(driver.findElement(MAIN_FRAME));
-        driver.switchTo().frame(driver.findElement(INNER_FRAME));
+        driver.switchTo().frame(mainFrame);
+        driver.switchTo().frame(innerFrame);
         return this;
     }
 
@@ -165,7 +168,7 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
 
     public void selectDropDownOption(String option) {
         new WebDriverWait(driver, Duration.ofSeconds(1))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(format("//*[contains(@class, 'md-clickable')]//md-option/div[contains(text(), '%s')]", option))))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(String.format(DROPDOWN_OPTION_XPATH_PATTERN, option))))
                 .click();
     }
 }

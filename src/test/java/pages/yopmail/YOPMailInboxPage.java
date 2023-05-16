@@ -10,7 +10,7 @@ public class YOPMailInboxPage extends BasePage {
     @FindBy(id = "ifmail")
     private WebElement emailFrame;
 
-    @FindBy(xpath = "//span[text()='Проверить почту']")
+    @FindBy(xpath = "//button[2][@class='md but text f24 egenbut']")
     private WebElement checkInboxButton;
 
     @FindBy(id = "nbmail")

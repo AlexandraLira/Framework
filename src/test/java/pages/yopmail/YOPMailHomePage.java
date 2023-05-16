@@ -10,7 +10,7 @@ public class YOPMailHomePage extends BasePage {
 
     private static final String YOP_MAIL_PAGE_URL = "https://yopmail.com/";
 
-    @FindBy(xpath = "//h3[text()='Случайный адрес электронной почты']")
+    @FindBy(xpath = "//*[@id='listeliens']/a[@href='email-generator']")
     private WebElement generateRandomEmailAddressIcon;
 
     @FindBy(xpath = "//span[@class='notmobile']")
