@@ -81,7 +81,7 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         return this;
     }
 
-    public GoogleCloudPricingCalculatorPage computeEngineIconClick() {
+    public GoogleCloudPricingCalculatorPage clickComputeEngineIcon() {
         computeEngineIcon.click();
         return this;
     }
@@ -150,12 +150,12 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         return this;
     }
 
-    public GoogleCloudPricingCalculatorPage addToEstimateButtonClick() {
+    public GoogleCloudPricingCalculatorPage clickAddToEstimateButton() {
         addToEstimateButton.click();
         return this;
     }
 
-    public GoogleCloudPricingCalculatorPage emailEstimateButtonClick() {
+    public GoogleCloudPricingCalculatorPage clickEmailEstimateButton() {
         emailEstimateButton.click();
         return this;
     }
@@ -167,7 +167,7 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
     }
 
     public void selectDropDownOption(String option) {
-        new WebDriverWait(driver, Duration.ofSeconds(1))
+        new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_1_SECOND))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(String.format(DROPDOWN_OPTION_XPATH_PATTERN, option))))
                 .click();
     }

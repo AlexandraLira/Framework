@@ -20,19 +20,24 @@ public class TestListener implements ITestListener {
     private final Logger log = LogManager.getRootLogger();
 
     public void onTestStart(ITestResult result) {
+        log.info("Test {} started successfully", result.getName());
     }
 
     public void onTestSuccess(ITestResult result) {
+        log.info("Test {} passed successfully", result.getName());
     }
 
     public void onTestFailure(ITestResult result) {
+        log.info("Test {} failed", result.getName());
         saveScreenshot();
     }
 
     public void onTestSkipped(ITestResult result) {
+        log.info("Test {} skipped", result.getName());
     }
 
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+        // no need to log message here
     }
 
     public void onTestFailedWithTimeout(ITestResult result) {
@@ -40,12 +45,16 @@ public class TestListener implements ITestListener {
     }
 
     public void onStart(ITestContext context) {
+        log.info("Test suite {} started", context.getSuite().getName());
+
     }
 
     public void onFinish(ITestContext context) {
+        log.info("Test suite {} finished", context.getSuite().getName());
     }
 
     private void saveScreenshot() {
+        log.info("Saving screenshot...");
         File screenCapture = ((TakesScreenshot) DriverSingleton
                 .getDriver())
                 .getScreenshotAs(OutputType.FILE);

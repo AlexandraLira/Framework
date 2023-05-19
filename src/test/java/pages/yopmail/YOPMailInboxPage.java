@@ -7,6 +7,8 @@ import pages.base.BasePage;
 
 public class YOPMailInboxPage extends BasePage {
 
+    private static final int REFRESH_LIMIT = 10;
+
     @FindBy(id = "ifmail")
     private WebElement emailFrame;
 
@@ -26,7 +28,7 @@ public class YOPMailInboxPage extends BasePage {
         super(driver);
     }
 
-    public YOPMailInboxPage checkInboxButtonClick() {
+    public YOPMailInboxPage clickCheckInboxButton() {
         checkInboxButton.click();
         return this;
     }
@@ -37,7 +39,11 @@ public class YOPMailInboxPage extends BasePage {
     }
 
     public YOPMailInboxPage refreshPage() {
-        while (amountOfEmails.getText().contains("0 mail")) refreshButton.click();
+        int count = 0;
+        while (amountOfEmails.getText().contains("0 mail") && count != REFRESH_LIMIT) {
+            refreshButton.click();
+            count++;
+        }
         return this;
     }
 

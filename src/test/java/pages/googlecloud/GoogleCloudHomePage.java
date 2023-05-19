@@ -28,7 +28,7 @@ public class GoogleCloudHomePage extends BasePage {
     public GoogleCloudHomePage searchForTerms(String searchTerm) {
         searchButton.click();
         searchButton.sendKeys(searchTerm + Keys.ENTER);
-        waitForElementToBeVisible(10, calculatorPageLink).click();
+        waitForElementToBeVisible(WAIT_TIME_10_SECONDS, calculatorPageLink).click();
         return this;
     }
 }

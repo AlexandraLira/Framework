@@ -30,13 +30,13 @@ public class YOPMailHomePage extends BasePage {
         return this;
     }
 
-    public YOPMailHomePage generateRandomEmailAddressIconClick() {
-        waitForElementToBeVisible(10, generateRandomEmailAddressIcon).click();
+    public YOPMailHomePage clickGenerateRandomEmailAddressIcon() {
+        waitForElementToBeVisible(WAIT_TIME_10_SECONDS, generateRandomEmailAddressIcon).click();
         return this;
     }
 
-    public YOPMailHomePage copyEmailAddressIconClick() {
-        waitForElementToBeVisible(5, copyEmailAddressIcon).click();
+    public YOPMailHomePage clickCopyEmailAddressIcon() {
+        waitForElementToBeVisible(WAIT_TIME_5_SECONDS, copyEmailAddressIcon).click();
         return this;
     }
 }

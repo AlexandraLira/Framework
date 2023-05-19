@@ -14,7 +14,7 @@ public final class CalculatorFormDataCreator {
     public static final String TESTDATA_DATA_CENTER_LOCATION = "testdata.dataCenterLocation";
     public static final String TESTDATA_COMMITTED_USAGE = "testdata.committedUsage";
 
-    public static CalculatorFormData withDataFromProperties() {
+    public static CalculatorFormData getDataFromProperties() {
         return new CalculatorFormData(TestDataCalculatorFormReader.getTestData(TESTDATA_NUMBER_OF_INSTANCES),
                 TestDataCalculatorFormReader.getTestData(TESTDATA_OPERATING_SYSTEM),
                 TestDataCalculatorFormReader.getTestData(TESTDATA_MODEL),

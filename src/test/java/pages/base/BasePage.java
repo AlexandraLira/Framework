@@ -12,6 +12,9 @@ import java.util.ArrayList;
 public abstract class BasePage {
 
     protected WebDriver driver;
+    protected final int WAIT_TIME_1_SECOND = 1;
+    protected final int WAIT_TIME_5_SECONDS = 5;
+    protected final int WAIT_TIME_10_SECONDS = 10;
 
     protected BasePage(WebDriver driver) {
         this.driver = driver;
